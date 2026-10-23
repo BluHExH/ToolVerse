@@ -1,0 +1,6 @@
+# ToolVerse — allow indexing of public pages
+User-agent: *
+Allow: /
+
+# Prefer the sitemap when a production origin is configured
+Sitemap: /sitemap.xml
