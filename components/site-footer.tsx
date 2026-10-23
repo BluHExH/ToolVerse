@@ -15,7 +15,7 @@ export function SiteFooter() {
               <BrandMark />
               <span>ToolVerse</span>
             </Link>
-            <p>{siteConfig.tagline} Ten focused tools for documents, images, text, and data.</p>
+            <p>{siteConfig.tagline} Focused tools for documents, images, text, and data.</p>
             <p style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", marginTop: "1rem" }}>
               <ShieldCheck size={16} aria-hidden="true" style={{ flex: "none", marginTop: "0.2rem" }} />
               <span>Files and text are processed in your browser. ToolVerse does not upload them.</span>

@@ -16,6 +16,11 @@ const loaders: Record<ToolSlug, ComponentType> = {
   "base64-encoder": dynamic(() => import("./base64-encoder"), { loading: () => <ToolLoading /> }),
   "qr-code-generator": dynamic(() => import("./qr-code-generator"), { loading: () => <ToolLoading /> }),
   "word-counter": dynamic(() => import("./word-counter"), { loading: () => <ToolLoading /> }),
+  "case-converter": dynamic(() => import("./case-converter"), { loading: () => <ToolLoading /> }),
+  "uuid-password-generator": dynamic(() => import("./uuid-password-generator"), { loading: () => <ToolLoading /> }),
+  "color-converter": dynamic(() => import("./color-converter"), { loading: () => <ToolLoading /> }),
+  "markdown-preview": dynamic(() => import("./markdown-preview"), { loading: () => <ToolLoading /> }),
+  "csv-json-converter": dynamic(() => import("./csv-json-converter"), { loading: () => <ToolLoading /> }),
 };
 
 export function ToolRunner({ slug }: { slug: ToolSlug }) {

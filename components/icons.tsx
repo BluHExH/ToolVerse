@@ -1,14 +1,19 @@
 import {
   AlignLeft,
+  ArrowLeftRight,
   BadgeCheck,
   Binary,
+  BookOpenText,
   Braces,
+  CaseSensitive,
   Code,
   FileImage,
   FileText,
   Image as ImageIcon,
+  KeyRound,
   Merge,
   Minimize2,
+  Palette,
   QrCode,
   Scaling,
   Scissors,
@@ -29,6 +34,11 @@ const toolIconMap = {
   binary: Binary,
   "qr-code": QrCode,
   "type-count": WholeWord,
+  case: CaseSensitive,
+  key: KeyRound,
+  palette: Palette,
+  markdown: BookOpenText,
+  table: ArrowLeftRight,
 } as const;
 
 const categoryIconMap: Record<CategorySlug, typeof FileText> = {

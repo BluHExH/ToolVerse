@@ -34,7 +34,7 @@ export default function TermsPage() {
       <div className="prose" style={{ paddingBottom: "3rem" }}>
         <h2>What this is</h2>
         <p>
-          ToolVerse provides ten free browser tools for processing PDFs, images, text, and data. Use of the site is
+          ToolVerse provides free browser tools for processing PDFs, images, text, and data. Use of the site is
           voluntary and free. There is no registration, subscription, or payment processing.
         </p>
 

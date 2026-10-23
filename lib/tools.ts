@@ -10,7 +10,12 @@ export type ToolSlug =
   | "json-validator"
   | "base64-encoder"
   | "qr-code-generator"
-  | "word-counter";
+  | "word-counter"
+  | "case-converter"
+  | "uuid-password-generator"
+  | "color-converter"
+  | "markdown-preview"
+  | "csv-json-converter";
 
 export type ToolIconName =
   | "merge"
@@ -22,7 +27,12 @@ export type ToolIconName =
   | "badge-check"
   | "binary"
   | "qr-code"
-  | "type-count";
+  | "type-count"
+  | "case"
+  | "key"
+  | "palette"
+  | "markdown"
+  | "table";
 
 export interface ToolDefinition {
   slug: ToolSlug;
@@ -295,6 +305,126 @@ export const tools: ToolDefinition[] = [
     ],
     processing: "All counting happens in your browser as you type. Text is never transmitted.",
     order: 10,
+    featured: false,
+  },
+  {
+    slug: "case-converter",
+    name: "Case Converter",
+    summary: "Switch text between common casing styles.",
+    description:
+      "Convert text to lower, upper, title, sentence, camel, Pascal, snake, kebab, or CONSTANT case. Useful for labels, identifiers, and cleanup.",
+    category: "text",
+    icon: "case",
+    href: "/tools/case-converter",
+    status: "available",
+    keywords: ["case converter", "camelcase", "snake case", "title case", "uppercase", "lowercase"],
+    steps: [
+      "Paste or type your text.",
+      "Choose a casing style.",
+      "Copy the converted result.",
+    ],
+    limits: [
+      "Identifier styles (camel, snake, kebab) split on spaces, punctuation, and case boundaries.",
+      "Very large inputs may feel slower in the browser.",
+    ],
+    processing: "Conversion runs entirely in your browser. Nothing is uploaded.",
+    order: 11,
+    featured: true,
+  },
+  {
+    slug: "uuid-password-generator",
+    name: "UUID & Password Generator",
+    summary: "Create UUIDs and strong random passwords locally.",
+    description:
+      "Generate UUID v4 values and configurable passwords with length and character-set controls. Uses the Web Crypto API when available.",
+    category: "developer",
+    icon: "key",
+    href: "/tools/uuid-password-generator",
+    status: "available",
+    keywords: ["uuid", "password generator", "random password", "guid", "secure password"],
+    steps: [
+      "Generate a new UUID or adjust password options.",
+      "Create a password with the character sets you need.",
+      "Copy the value you need.",
+    ],
+    limits: [
+      "Password length is limited to keep the interface responsive.",
+      "Randomness depends on the browser crypto APIs.",
+    ],
+    processing: "Values are generated on this device. Nothing is sent to a server.",
+    order: 12,
+    featured: true,
+  },
+  {
+    slug: "color-converter",
+    name: "Color Converter",
+    summary: "Convert between HEX, RGB, and HSL.",
+    description:
+      "Paste a hex or rgb() color, pick a swatch, and copy HEX, RGB, and HSL representations.",
+    category: "developer",
+    icon: "palette",
+    href: "/tools/color-converter",
+    status: "available",
+    keywords: ["color converter", "hex to rgb", "hsl", "color picker", "hex color"],
+    steps: [
+      "Enter a hex or rgb color, or use the color picker.",
+      "Review HEX, RGB, and HSL values.",
+      "Copy the format you need.",
+    ],
+    limits: [
+      "Alpha channels are not represented in the output formats.",
+      "Invalid input is rejected with a clear message.",
+    ],
+    processing: "Color math runs in your browser only.",
+    order: 13,
+    featured: false,
+  },
+  {
+    slug: "markdown-preview",
+    name: "Markdown Preview",
+    summary: "Preview a safe subset of Markdown as you type.",
+    description:
+      "Write Markdown on the left and see a live HTML preview on the right. Supports headings, lists, emphasis, code, and links.",
+    category: "text",
+    icon: "markdown",
+    href: "/tools/markdown-preview",
+    status: "available",
+    keywords: ["markdown preview", "markdown editor", "md preview", "readme preview"],
+    steps: [
+      "Paste or write Markdown in the editor.",
+      "Review the live preview.",
+      "Edit until the preview matches what you need.",
+    ],
+    limits: [
+      "Only a focused subset of Markdown is supported.",
+      "Raw HTML in the source is escaped for safety.",
+    ],
+    processing: "Rendering happens locally in your browser.",
+    order: 14,
+    featured: false,
+  },
+  {
+    slug: "csv-json-converter",
+    name: "CSV ↔ JSON Converter",
+    summary: "Convert tables between CSV and JSON.",
+    description:
+      "Turn CSV into a JSON array of objects, or JSON objects back into CSV. Handy for spreadsheets and APIs.",
+    category: "developer",
+    icon: "table",
+    href: "/tools/csv-json-converter",
+    status: "available",
+    keywords: ["csv to json", "json to csv", "csv converter", "json table"],
+    steps: [
+      "Choose CSV → JSON or JSON → CSV.",
+      "Paste your data and convert.",
+      "Copy the result.",
+    ],
+    limits: [
+      "JSON → CSV expects an array of objects.",
+      "Very large tables may be slower in the browser.",
+    ],
+    processing: "Parsing and conversion stay on this device.",
+    order: 15,
     featured: false,
   },
 ];

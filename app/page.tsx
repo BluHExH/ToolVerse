@@ -30,7 +30,7 @@ export default function HomePage() {
               Small tasks, <em>handled well.</em>
             </h1>
             <p className="hero__lede">
-              Merge a PDF, compress a photo, format JSON, or create a QR code. Ten focused tools that work in your
+              Merge a PDF, compress a photo, format JSON, or create a QR code. Focused tools that work in your
               browser — no account, no upload queue, no clutter.
             </p>
 
@@ -278,7 +278,7 @@ export default function HomePage() {
                 <Upload size={14} aria-hidden="true" /> No upload
               </span>
               <span className="chip">
-                <ToolIcon name="badge-check" size={14} /> Ten working tools
+                <ToolIcon name="badge-check" size={14} /> Working tools
               </span>
             </div>
           </div>

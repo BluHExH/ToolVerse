@@ -6,7 +6,7 @@ ToolVerse is a small collection of browser-based utilities for common tasks: mer
 
 ## Features
 
-- **Ten focused tools**, all free, no account required
+- **Focused tools**, all free, no account required
 - **Local processing** for PDFs, images, text, JSON, Base64, and QR codes
 - Categories: PDF, Image, Text, Developer
 - Guides and blog articles about privacy and browser-based workflows
@@ -27,6 +27,11 @@ ToolVerse is a small collection of browser-based utilities for common tasks: mer
 | **Base64 Encoder** | Encode and decode UTF-8 text as Base64 |
 | **QR Code Generator** | Create QR codes with contrast guidance |
 | **Word Counter** | Words, characters, sentences, paragraphs, reading time |
+| **Case Converter** | lower, Title, camelCase, snake_case, and more |
+| **UUID & Password Generator** | UUID v4 and configurable passwords |
+| **Color Converter** | HEX ↔ RGB ↔ HSL with picker |
+| **Markdown Preview** | Live preview for a safe Markdown subset |
+| **CSV ↔ JSON Converter** | Convert tables either direction |
 
 File size limits (for example 50 MB per PDF, 25 MB per image) are documented on each tool page and exist because processing happens on your device.
 

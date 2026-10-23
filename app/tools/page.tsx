@@ -8,12 +8,12 @@ import { tools } from "@/lib/tools";
 export const metadata: Metadata = {
   title: "All Tools",
   description:
-    "Browse all ten ToolVerse tools for PDFs, images, text, JSON, Base64, and QR codes. Every tool runs in your browser and includes clear limits.",
+    "Browse all ToolVerse tools for PDFs, images, text, JSON, Base64, and QR codes. Every tool runs in your browser and includes clear limits.",
   alternates: { canonical: "/tools" },
   openGraph: {
     title: "All Tools | ToolVerse",
     description:
-      "Browse all ten ToolVerse tools for PDFs, images, text, JSON, Base64, and QR codes.",
+      "Browse all ToolVerse tools for PDFs, images, text, JSON, Base64, and QR codes.",
     url: "/tools",
   },
 };
@@ -26,7 +26,7 @@ export default function ToolsPage() {
         <p className="eyebrow eyebrow--rust">Tool directory</p>
         <h1 className="page-head__title">A complete toolbox, nothing extra</h1>
         <p className="page-head__lede">
-          Ten tools that each do one job well. Search by task, filter by category, and open a tool to see exactly what
+          Tools that each do one job well. Search by task, filter by category, and open a tool to see exactly what
           it accepts before you start.
         </p>
         <div className="page-head__meta">

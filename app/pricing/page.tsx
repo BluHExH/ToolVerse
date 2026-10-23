@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 const includedFeatures = [
-  "All ten tools, with no usage caps beyond the documented file limits",
+  "All tools, with no usage caps beyond the documented file limits",
   "Local browser processing for files, images, text, and data",
   "No account creation, sign-up, or sign-in",
   "The complete tools directory, categories, and guides",

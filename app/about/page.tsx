@@ -5,12 +5,12 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "ToolVerse is a small, independent utility platform: ten browser-based tools for PDFs, images, text, and data, built around clear limits and local processing.",
+    "ToolVerse is a small, independent utility platform: browser-based tools for PDFs, images, text, and data, built around clear limits and local processing.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About ToolVerse",
     description:
-      "Ten browser-based tools for PDFs, images, text, and data, built around clear limits and local processing.",
+      "Browser-based tools for PDFs, images, text, and data, built around clear limits and local processing.",
     url: "/about",
   },
 };
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const principles = [
   {
     title: "One job per tool",
-    text: "A tool that claims to do everything usually does nothing well. ToolVerse has ten tools, each focused on a single task with a defined input and output.",
+    text: "A tool that claims to do everything usually does nothing well. ToolVerse keeps a focused set of tools, each focused on a single task with a defined input and output.",
   },
   {
     title: "Local processing by default",
@@ -100,7 +100,7 @@ export default function AboutPage() {
 
           <h2>Where ToolVerse is going</h2>
           <p>
-            The current scope is ten working tools across four categories. New tools are added only when they can be
+            The current scope is a focused set of tools across four categories. New tools are added only when they can be
             implemented honestly — meaning real processing, stated limits, and no fake result pages. Requests are
             welcome through <Link href="/contact">the contact page</Link>.
           </p>

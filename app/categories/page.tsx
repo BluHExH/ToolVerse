@@ -33,7 +33,7 @@ export default function CategoriesPage() {
         <p className="eyebrow eyebrow--rust">Categories</p>
         <h1 className="page-head__title">Browse by the task at hand</h1>
         <p className="page-head__lede">
-          Four shelves, ten tools. Each category groups tools that solve the same kind of problem, with the same
+          Four shelves of practical tools. Each category groups tools that solve the same kind of problem, with the same
           browser-based approach and clear limits.
         </p>
       </div>
