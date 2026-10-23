@@ -165,6 +165,20 @@ tests/               Vitest unit tests
 e2e/                 Playwright end-to-end tests
 ```
 
+## Continuous integration
+
+GitHub Actions workflow `.github/workflows/ci.yml` runs on pushes and pull requests to `main`:
+
+1. `npm ci` (lockfile install)
+2. `npm run lint`
+3. `npm run typecheck`
+4. `npm test` (Vitest unit tests)
+5. `npm run build`
+
+Playwright E2E tests are **not** part of the default CI job (browser install cost and longer runtime). Run them locally with `npm run test:e2e` after `npx playwright install`.
+
+`npm run test:lib` is a lightweight, dependency-free check of pure `lib/` modules. It does **not** replace `npm test`.
+
 ## Deployment
 
 This is a standard Next.js application. Suitable hosts include Vercel, Netlify, Cloudflare Pages, or any Node host that can run `next build` and `next start`.

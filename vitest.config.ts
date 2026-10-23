@@ -5,7 +5,9 @@ export default defineConfig({
   test: {
     environment: "node",
     include: ["tests/**/*.test.ts"],
-    exclude: ["node_modules", ".next", "e2e"],
+    exclude: ["node_modules/**", ".next/**", "e2e/**", "scripts/**"],
+    // Full suite is `npm test`. `npm run test:lib` is a dependency-free smoke path only.
+    passWithNoTests: false,
   },
   resolve: {
     alias: {
