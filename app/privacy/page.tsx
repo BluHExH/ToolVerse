@@ -86,7 +86,7 @@ export default function PrivacyPage() {
 
         <h2>Changes</h2>
         <p>
-          If the site's data handling changes, this page will be updated and the date above will change. That is the
+          If the site’s data handling changes, this page will be updated and the date above will change. That is the
           mechanism: the description here is meant to reflect reality, and reality is inspectable in the code.
         </p>
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Download, Laptop, ListChecks, ShieldCheck } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { CategoryIcon, ToolIcon } from "@/components/icons";
+import { ToolIcon } from "@/components/icons";
 import { ToolRunner } from "@/components/tools/tool-runner";
 import { getCategory } from "@/lib/categories";
 import { absoluteUrl } from "@/lib/site";

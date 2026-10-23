@@ -67,7 +67,7 @@ export default function AboutPage() {
           </p>
           <p>
             The tools are practical. PDF merging keeps page order and preserves image quality. Image compression exposes
-            a real quality slider instead of an opaque "optimize" button. JSON validation reports the line and column of
+            a real quality slider instead of an opaque “optimize” button. JSON validation reports the line and column of
             the first syntax error instead of just saying it failed.
           </p>
 

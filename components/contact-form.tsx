@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Copy, Mail, Send } from "lucide-react";
+import { Send } from "lucide-react";
 import { z } from "zod";
 import { siteConfig } from "@/lib/site";
 import { CopyButton } from "@/components/tools/copy-button";

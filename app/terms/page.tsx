@@ -47,7 +47,7 @@ export default function TermsPage() {
 
         <h2>No warranty</h2>
         <p>
-          The tools are provided "as is." Processing happens in your browser with standard web APIs and third-party open
+          The tools are provided “as is.” Processing happens in your browser with standard web APIs and third-party open
           source code, and results can be affected by the specific file you provide or the browser you use. Always check
           output — especially PDFs with legal or financial content — before relying on it.
         </p>
@@ -72,7 +72,7 @@ export default function TermsPage() {
 
         <h2>Governing concepts</h2>
         <p>
-          Because ToolVerse is a simple web utility in which all processing is local, the meaningful "terms" are
+          Because ToolVerse is a simple web utility in which all processing is local, the meaningful “terms” are
           practical: use the site for legitimate purposes, verify results yourself, and do not depend on it as a sole
           copy of irreplaceable files.
         </p>

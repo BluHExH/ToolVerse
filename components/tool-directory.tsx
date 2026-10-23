@@ -114,7 +114,7 @@ export function ToolDirectory({ initialCategory }: { initialCategory?: CategoryS
 
       {results.length > 0 ? (
         <div className="tool-grid">
-          {results.map((tool: ToolDefinition, index) => (
+          {results.map((tool: ToolDefinition) => (
             <ToolCard key={tool.slug} tool={tool} index={tools.indexOf(tool)} />
           ))}
         </div>
