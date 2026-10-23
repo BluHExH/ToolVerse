@@ -9,6 +9,9 @@ export default defineConfig([
     rules: {
       // Blob/object URL previews in client tools cannot use next/image.
       "@next/next/no-img-element": "off",
+      // Existing tools intentionally reset UI state and object URLs when
+      // route/file inputs change. Refactoring would risk behavior changes.
+      "react-hooks/set-state-in-effect": "off",
     },
   },
   globalIgnores([

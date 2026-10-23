@@ -105,7 +105,6 @@ export default function QrCodeGenerator() {
       cancelled = true;
       window.clearTimeout(timer);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text, size, margin, ecc, normalizedForeground, normalizedBackground, activeError]);
 
   useEffect(() => {
