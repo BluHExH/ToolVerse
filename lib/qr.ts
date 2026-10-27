@@ -71,6 +71,27 @@ export function evaluateQrContrast(foreground: string, background: string): Cont
   return { ratio: Math.round(ratio * 100) / 100, level };
 }
 
+/** High-contrast pair safe for most phone scanners. */
+export const QR_SAFE_FOREGROUND = "#000000";
+export const QR_SAFE_BACKGROUND = "#FFFFFF";
+
+/**
+ * If the pair is too low-contrast for reliable scanning, return a scanner-safe pair.
+ * Otherwise return the normalized input colors.
+ */
+export function resolveReadableQrColors(
+  foreground: string,
+  background: string,
+): { foreground: string; background: string; adjusted: boolean } {
+  const fg = normalizeHexColor(foreground) ?? QR_SAFE_FOREGROUND;
+  const bg = normalizeHexColor(background) ?? QR_SAFE_BACKGROUND;
+  const evaluation = evaluateQrContrast(fg, bg);
+  if (!evaluation || evaluation.level === "poor") {
+    return { foreground: QR_SAFE_FOREGROUND, background: QR_SAFE_BACKGROUND, adjusted: true };
+  }
+  return { foreground: fg, background: bg, adjusted: false };
+}
+
 export function validateQrPayload(text: string): string | null {
   if (!text.trim()) {
     return "Enter a URL or some text to turn into a QR code.";

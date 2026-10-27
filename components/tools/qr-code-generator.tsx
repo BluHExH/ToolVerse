@@ -7,6 +7,8 @@ import { downloadBlob } from "@/lib/download";
 import { formatNumber } from "@/lib/format";
 import {
   QR_CONTRAST_RECOMMENDED,
+  QR_SAFE_BACKGROUND,
+  QR_SAFE_FOREGROUND,
   evaluateQrContrast,
   isValidHexColor,
   normalizeHexColor,
@@ -28,8 +30,8 @@ const ECC_LEVELS = [
 type EccLevel = (typeof ECC_LEVELS)[number]["value"];
 
 const DEFAULTS = {
-  foreground: "#17251F",
-  background: "#FFFFFF",
+  foreground: QR_SAFE_FOREGROUND,
+  background: QR_SAFE_BACKGROUND,
   size: 512 as (typeof SIZES)[number],
   ecc: "M" as EccLevel,
   margin: 4,
@@ -53,7 +55,7 @@ export default function QrCodeGenerator() {
 
   let configError: string | null = null;
   if (!isValidHexColor(foreground) || !isValidHexColor(background)) {
-    configError = "Enter valid hex colors such as #17251F or #FFFFFF.";
+    configError = "Enter valid hex colors such as #000000 or #FFFFFF.";
   }
 
   const contrast =
@@ -61,9 +63,13 @@ export default function QrCodeGenerator() {
       ? evaluateQrContrast(normalizedForeground, normalizedBackground)
       : null;
 
-  if (contrast && contrast.level === "poor") {
-    configError = `The contrast between these colors is ${contrast.ratio}:1. Increase the difference between foreground and background so scanners can read the code.`;
-  }
+  // Auto-correct unreadable pairs so the tool never gets stuck on a contrast error.
+  useEffect(() => {
+    if (!normalizedForeground || !normalizedBackground) return;
+    if (contrast?.level !== "poor") return;
+    setForeground(QR_SAFE_FOREGROUND);
+    setBackground(QR_SAFE_BACKGROUND);
+  }, [contrast?.level, normalizedForeground, normalizedBackground]);
 
   const activeError = payloadError ?? configError;
 
@@ -311,14 +317,36 @@ export default function QrCodeGenerator() {
             />
           </div>
 
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+            <button
+              type="button"
+              className="btn btn--secondary btn--sm"
+              onClick={() => {
+                setForeground(QR_SAFE_FOREGROUND);
+                setBackground(QR_SAFE_BACKGROUND);
+              }}
+            >
+              Use scanner-safe colors
+            </button>
+          </div>
+
           {contrast ? (
-            <Notice tone={contrast.level === "good" ? "success" : contrast.level === "warning" ? "warning" : "error"}>
+            <Notice
+              tone={contrast.level === "good" ? "success" : contrast.level === "warning" ? "warning" : "info"}
+              title={
+                contrast.level === "good"
+                  ? "Good contrast"
+                  : contrast.level === "warning"
+                    ? "Acceptable contrast"
+                    : "Colors adjusted"
+              }
+            >
               Contrast ratio {contrast.ratio}:1.{" "}
               {contrast.level === "good"
                 ? "This contrast is comfortable for scanners."
                 : contrast.level === "warning"
-                  ? `This works, but a ratio of at least ${QR_CONTRAST_RECOMMENDED}:1 is safer for print and small sizes.`
-                  : "Scanners may fail to read this code."}
+                  ? `This can work, but at least ${QR_CONTRAST_RECOMMENDED}:1 is safer for print and small sizes.`
+                  : "Low-contrast colors were switched to black on white so scanners can read the code."}
             </Notice>
           ) : null}
 
